@@ -1,0 +1,324 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A98618BD15588D85001D7354 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98618BC15588D85001D7354 /* UIKit.framework */; };
+		A98618BF15588D85001D7354 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98618BE15588D85001D7354 /* Foundation.framework */; };
+		A98618C115588D85001D7354 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98618C015588D85001D7354 /* CoreGraphics.framework */; };
+		A98618C315588D85001D7354 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98618C215588D85001D7354 /* CoreData.framework */; };
+		A98618C915588D85001D7354 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A98618C715588D85001D7354 /* InfoPlist.strings */; };
+		A98618CB15588D85001D7354 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A98618CA15588D85001D7354 /* main.m */; };
+		A98618CF15588D85001D7354 /* STAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A98618CE15588D85001D7354 /* STAppDelegate.m */; };
+		A98618D215588D85001D7354 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A98618D015588D85001D7354 /* MainStoryboard_iPhone.storyboard */; };
+		A98618D515588D85001D7354 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A98618D315588D85001D7354 /* MainStoryboard_iPad.storyboard */; };
+		A98618D815588D85001D7354 /* HumbleShame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A98618D615588D85001D7354 /* HumbleShame.xcdatamodeld */; };
+		A98618DB15588D85001D7354 /* STMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98618DA15588D85001D7354 /* STMasterViewController.m */; };
+		A98618DE15588D85001D7354 /* STDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98618DD15588D85001D7354 /* STDetailViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A98618B815588D85001D7354 /* HumbleShame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HumbleShame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A98618BC15588D85001D7354 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A98618BE15588D85001D7354 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A98618C015588D85001D7354 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A98618C215588D85001D7354 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A98618C615588D85001D7354 /* HumbleShame-Info.plist */ = {isa = PBXFileReference; path = "HumbleShame-Info.plist"; sourceTree = "<group>"; };
+		A98618C815588D85001D7354 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A98618CA15588D85001D7354 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A98618CC15588D85001D7354 /* HumbleShame-Prefix.pch */ = {isa = PBXFileReference; path = "HumbleShame-Prefix.pch"; sourceTree = "<group>"; };
+		A98618CD15588D85001D7354 /* STAppDelegate.h */ = {isa = PBXFileReference; path = STAppDelegate.h; sourceTree = "<group>"; };
+		A98618CE15588D85001D7354 /* STAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STAppDelegate.m; sourceTree = "<group>"; };
+		A98618D115588D85001D7354 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		A98618D415588D85001D7354 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		A98618D715588D85001D7354 /* HumbleShame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HumbleShame.xcdatamodel; sourceTree = "<group>"; };
+		A98618D915588D85001D7354 /* STMasterViewController.h */ = {isa = PBXFileReference; path = STMasterViewController.h; sourceTree = "<group>"; };
+		A98618DA15588D85001D7354 /* STMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STMasterViewController.m; sourceTree = "<group>"; };
+		A98618DC15588D85001D7354 /* STDetailViewController.h */ = {isa = PBXFileReference; path = STDetailViewController.h; sourceTree = "<group>"; };
+		A98618DD15588D85001D7354 /* STDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STDetailViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A98618B515588D85001D7354 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A98618BD15588D85001D7354 /* UIKit.framework in Frameworks */,
+				A98618BF15588D85001D7354 /* Foundation.framework in Frameworks */,
+				A98618C115588D85001D7354 /* CoreGraphics.framework in Frameworks */,
+				A98618C315588D85001D7354 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A98618AD15588D84001D7354 = {
+			isa = PBXGroup;
+			children = (
+				A98618C415588D85001D7354 /* HumbleShame */,
+				A98618BB15588D85001D7354 /* Frameworks */,
+				A98618B915588D85001D7354 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A98618B915588D85001D7354 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A98618B815588D85001D7354 /* HumbleShame.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A98618BB15588D85001D7354 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A98618BC15588D85001D7354 /* UIKit.framework */,
+				A98618BE15588D85001D7354 /* Foundation.framework */,
+				A98618C015588D85001D7354 /* CoreGraphics.framework */,
+				A98618C215588D85001D7354 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A98618C415588D85001D7354 /* HumbleShame */ = {
+			isa = PBXGroup;
+			children = (
+				A98618CD15588D85001D7354 /* STAppDelegate.h */,
+				A98618CE15588D85001D7354 /* STAppDelegate.m */,
+				A98618D015588D85001D7354 /* MainStoryboard_iPhone.storyboard */,
+				A98618D315588D85001D7354 /* MainStoryboard_iPad.storyboard */,
+				A98618D915588D85001D7354 /* STMasterViewController.h */,
+				A98618DA15588D85001D7354 /* STMasterViewController.m */,
+				A98618DC15588D85001D7354 /* STDetailViewController.h */,
+				A98618DD15588D85001D7354 /* STDetailViewController.m */,
+				A98618D615588D85001D7354 /* HumbleShame.xcdatamodeld */,
+				A98618C515588D85001D7354 /* Supporting Files */,
+			);
+			path = HumbleShame;
+			sourceTree = "<group>";
+		};
+		A98618C515588D85001D7354 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A98618C615588D85001D7354 /* HumbleShame-Info.plist */,
+				A98618C715588D85001D7354 /* InfoPlist.strings */,
+				A98618CA15588D85001D7354 /* main.m */,
+				A98618CC15588D85001D7354 /* HumbleShame-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A98618B715588D85001D7354 /* HumbleShame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A98618E115588D85001D7354 /* Build configuration list for PBXNativeTarget "HumbleShame" */;
+			buildPhases = (
+				A98618B415588D85001D7354 /* Sources */,
+				A98618B515588D85001D7354 /* Frameworks */,
+				A98618B615588D85001D7354 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HumbleShame;
+			productName = HumbleShame;
+			productReference = A98618B815588D85001D7354 /* HumbleShame.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A98618AF15588D84001D7354 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ST;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Momentum Mobile";
+			};
+			buildConfigurationList = A98618B215588D84001D7354 /* Build configuration list for PBXProject "HumbleShame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A98618AD15588D84001D7354;
+			productRefGroup = A98618B915588D85001D7354 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A98618B715588D85001D7354 /* HumbleShame */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A98618B615588D85001D7354 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A98618C915588D85001D7354 /* InfoPlist.strings in Resources */,
+				A98618D215588D85001D7354 /* MainStoryboard_iPhone.storyboard in Resources */,
+				A98618D515588D85001D7354 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A98618B415588D85001D7354 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A98618CB15588D85001D7354 /* main.m in Sources */,
+				A98618CF15588D85001D7354 /* STAppDelegate.m in Sources */,
+				A98618D815588D85001D7354 /* HumbleShame.xcdatamodeld in Sources */,
+				A98618DB15588D85001D7354 /* STMasterViewController.m in Sources */,
+				A98618DE15588D85001D7354 /* STDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A98618C715588D85001D7354 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A98618C815588D85001D7354 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A98618D015588D85001D7354 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A98618D115588D85001D7354 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		A98618D315588D85001D7354 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A98618D415588D85001D7354 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A98618DF15588D85001D7354 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A98618E015588D85001D7354 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A98618E215588D85001D7354 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HumbleShame/HumbleShame-Prefix.pch";
+				INFOPLIST_FILE = "HumbleShame/HumbleShame-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A98618E315588D85001D7354 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HumbleShame/HumbleShame-Prefix.pch";
+				INFOPLIST_FILE = "HumbleShame/HumbleShame-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A98618B215588D84001D7354 /* Build configuration list for PBXProject "HumbleShame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A98618DF15588D85001D7354 /* Debug */,
+				A98618E015588D85001D7354 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A98618E115588D85001D7354 /* Build configuration list for PBXNativeTarget "HumbleShame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A98618E215588D85001D7354 /* Debug */,
+				A98618E315588D85001D7354 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A98618D615588D85001D7354 /* HumbleShame.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A98618D715588D85001D7354 /* HumbleShame.xcdatamodel */,
+			);
+			currentVersion = A98618D715588D85001D7354 /* HumbleShame.xcdatamodel */;
+			path = HumbleShame.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A98618AF15588D84001D7354 /* Project object */;
+}
