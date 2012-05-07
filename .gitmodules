@@ -4,3 +4,6 @@
 [submodule "Vendor/BlocksKit"]
 	path = Vendor/BlocksKit
 	url = https://github.com/zwaldowski/BlocksKit.git
+[submodule "Vendor/MagicalRecord"]
+	path = Vendor/MagicalRecord
+	url = https://github.com/magicalpanda/MagicalRecord.git

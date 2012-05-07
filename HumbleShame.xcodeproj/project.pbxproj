@@ -19,6 +19,13 @@
 		A94692851558910F0074648E /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A986191215588FFC001D7354 /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A946929F155891A80074648E /* libBlocksKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9469294155891960074648E /* libBlocksKit.a */; };
 		A94692A51558921A0074648E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A94692A41558921A0074648E /* MessageUI.framework */; };
+		A9469397155892E80074648E /* NSManagedObject+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = A94692F9155892E70074648E /* NSManagedObject+MagicalRecord.m */; };
+		A9469398155892E80074648E /* NSManagedObjectContext+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = A94692FB155892E70074648E /* NSManagedObjectContext+MagicalRecord.m */; };
+		A9469399155892E80074648E /* NSManagedObjectModel+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = A94692FD155892E70074648E /* NSManagedObjectModel+MagicalRecord.m */; };
+		A946939A155892E80074648E /* NSPersistentStore+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = A94692FF155892E70074648E /* NSPersistentStore+MagicalRecord.m */; };
+		A946939B155892E80074648E /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = A9469301155892E70074648E /* NSPersistentStoreCoordinator+MagicalRecord.m */; };
+		A946939C155892E80074648E /* MagicalRecordHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = A9469304155892E70074648E /* MagicalRecordHelpers.m */; };
+		A946939D155892E80074648E /* MRCoreDataAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A9469307155892E70074648E /* MRCoreDataAction.m */; };
 		A98618BD15588D85001D7354 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98618BC15588D85001D7354 /* UIKit.framework */; };
 		A98618BF15588D85001D7354 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98618BE15588D85001D7354 /* Foundation.framework */; };
 		A98618C115588D85001D7354 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98618C015588D85001D7354 /* CoreGraphics.framework */; };
@@ -83,6 +90,22 @@
 /* Begin PBXFileReference section */
 		A9469286155891910074648E /* BlocksKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BlocksKit.xcodeproj; path = Vendor/BlocksKit/BlocksKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		A94692A41558921A0074648E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		A94692F8155892E70074648E /* NSManagedObject+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+MagicalRecord.h"; sourceTree = "<group>"; };
+		A94692F9155892E70074648E /* NSManagedObject+MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+MagicalRecord.m"; sourceTree = "<group>"; };
+		A94692FA155892E70074648E /* NSManagedObjectContext+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+MagicalRecord.h"; sourceTree = "<group>"; };
+		A94692FB155892E70074648E /* NSManagedObjectContext+MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+MagicalRecord.m"; sourceTree = "<group>"; };
+		A94692FC155892E70074648E /* NSManagedObjectModel+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectModel+MagicalRecord.h"; sourceTree = "<group>"; };
+		A94692FD155892E70074648E /* NSManagedObjectModel+MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectModel+MagicalRecord.m"; sourceTree = "<group>"; };
+		A94692FE155892E70074648E /* NSPersistentStore+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPersistentStore+MagicalRecord.h"; sourceTree = "<group>"; };
+		A94692FF155892E70074648E /* NSPersistentStore+MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPersistentStore+MagicalRecord.m"; sourceTree = "<group>"; };
+		A9469300155892E70074648E /* NSPersistentStoreCoordinator+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPersistentStoreCoordinator+MagicalRecord.h"; sourceTree = "<group>"; };
+		A9469301155892E70074648E /* NSPersistentStoreCoordinator+MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPersistentStoreCoordinator+MagicalRecord.m"; sourceTree = "<group>"; };
+		A9469302155892E70074648E /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CoreData+MagicalRecord.h"; path = "Source/CoreData+MagicalRecord.h"; sourceTree = "<group>"; };
+		A9469303155892E70074648E /* MagicalRecordHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MagicalRecordHelpers.h; path = Source/MagicalRecordHelpers.h; sourceTree = "<group>"; };
+		A9469304155892E70074648E /* MagicalRecordHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MagicalRecordHelpers.m; path = Source/MagicalRecordHelpers.m; sourceTree = "<group>"; };
+		A9469305155892E70074648E /* MagicalRecordShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MagicalRecordShorthand.h; path = Source/MagicalRecordShorthand.h; sourceTree = "<group>"; };
+		A9469306155892E70074648E /* MRCoreDataAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRCoreDataAction.h; path = Source/MRCoreDataAction.h; sourceTree = "<group>"; };
+		A9469307155892E70074648E /* MRCoreDataAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRCoreDataAction.m; path = Source/MRCoreDataAction.m; sourceTree = "<group>"; };
 		A98618B815588D85001D7354 /* HumbleShame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HumbleShame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98618BC15588D85001D7354 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A98618BE15588D85001D7354 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -153,6 +176,39 @@
 				A946929C155891960074648E /* iOS Tests.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A94692B4155892E70074648E /* MagicalRecord */ = {
+			isa = PBXGroup;
+			children = (
+				A94692E8155892E70074648E /* Categories */,
+				A9469302155892E70074648E /* CoreData+MagicalRecord.h */,
+				A9469303155892E70074648E /* MagicalRecordHelpers.h */,
+				A9469304155892E70074648E /* MagicalRecordHelpers.m */,
+				A9469305155892E70074648E /* MagicalRecordShorthand.h */,
+				A9469306155892E70074648E /* MRCoreDataAction.h */,
+				A9469307155892E70074648E /* MRCoreDataAction.m */,
+			);
+			name = MagicalRecord;
+			path = Vendor/MagicalRecord;
+			sourceTree = SOURCE_ROOT;
+		};
+		A94692E8155892E70074648E /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				A94692F8155892E70074648E /* NSManagedObject+MagicalRecord.h */,
+				A94692F9155892E70074648E /* NSManagedObject+MagicalRecord.m */,
+				A94692FA155892E70074648E /* NSManagedObjectContext+MagicalRecord.h */,
+				A94692FB155892E70074648E /* NSManagedObjectContext+MagicalRecord.m */,
+				A94692FC155892E70074648E /* NSManagedObjectModel+MagicalRecord.h */,
+				A94692FD155892E70074648E /* NSManagedObjectModel+MagicalRecord.m */,
+				A94692FE155892E70074648E /* NSPersistentStore+MagicalRecord.h */,
+				A94692FF155892E70074648E /* NSPersistentStore+MagicalRecord.m */,
+				A9469300155892E70074648E /* NSPersistentStoreCoordinator+MagicalRecord.h */,
+				A9469301155892E70074648E /* NSPersistentStoreCoordinator+MagicalRecord.m */,
+			);
+			name = Categories;
+			path = Source/Categories;
 			sourceTree = "<group>";
 		};
 		A98618AD15588D84001D7354 = {
@@ -246,6 +302,7 @@
 			children = (
 				A98618FD15588FFC001D7354 /* AFNetworking */,
 				A9469286155891910074648E /* BlocksKit.xcodeproj */,
+				A94692B4155892E70074648E /* MagicalRecord */,
 			);
 			name = Vendor;
 			path = ..;
@@ -406,6 +463,13 @@
 				A98618D815588D85001D7354 /* HumbleShame.xcdatamodeld in Sources */,
 				A98618DB15588D85001D7354 /* STMasterViewController.m in Sources */,
 				A98618DE15588D85001D7354 /* STDetailViewController.m in Sources */,
+				A9469397155892E80074648E /* NSManagedObject+MagicalRecord.m in Sources */,
+				A9469398155892E80074648E /* NSManagedObjectContext+MagicalRecord.m in Sources */,
+				A9469399155892E80074648E /* NSManagedObjectModel+MagicalRecord.m in Sources */,
+				A946939A155892E80074648E /* NSPersistentStore+MagicalRecord.m in Sources */,
+				A946939B155892E80074648E /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
+				A946939C155892E80074648E /* MagicalRecordHelpers.m in Sources */,
+				A946939D155892E80074648E /* MRCoreDataAction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,10 +561,20 @@
 		A98618E215588D85001D7354 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Vendor/MagicalRecord/iOS App Unit Tests/Frameworks\"",
+					"\"$(SRCROOT)/Vendor/MagicalRecord/Mac App Unit Tests/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HumbleShame/HumbleShame-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/Vendor/**";
 				INFOPLIST_FILE = "HumbleShame/HumbleShame-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Vendor/MagicalRecord/iOS App Unit Tests/Frameworks/OCMockLibrary\"",
+					"\"$(SRCROOT)/Vendor/MagicalRecord/Mac App Unit Tests/Frameworks/OCMockLibrary\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -513,10 +587,20 @@
 		A98618E315588D85001D7354 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Vendor/MagicalRecord/iOS App Unit Tests/Frameworks\"",
+					"\"$(SRCROOT)/Vendor/MagicalRecord/Mac App Unit Tests/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HumbleShame/HumbleShame-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/Vendor/**";
 				INFOPLIST_FILE = "HumbleShame/HumbleShame-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Vendor/MagicalRecord/iOS App Unit Tests/Frameworks/OCMockLibrary\"",
+					"\"$(SRCROOT)/Vendor/MagicalRecord/Mac App Unit Tests/Frameworks/OCMockLibrary\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",

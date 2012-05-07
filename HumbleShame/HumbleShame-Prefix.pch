@@ -15,4 +15,6 @@
 
 	#import "AFNetworking.h"
 	#import <BlocksKit/BlocksKit.h>
+	#define MR_SHORTHAND
+	#import "CoreData+MagicalRecord.h"
 #endif
