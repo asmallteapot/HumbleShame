@@ -19,6 +19,7 @@
 		A98618D815588D85001D7354 /* HumbleShame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A98618D615588D85001D7354 /* HumbleShame.xcdatamodeld */; };
 		A98618DB15588D85001D7354 /* STMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98618DA15588D85001D7354 /* STMasterViewController.m */; };
 		A98618DE15588D85001D7354 /* STDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98618DD15588D85001D7354 /* STDetailViewController.m */; };
+		A98618E915588E2C001D7354 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A98618E815588E2C001D7354 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,19 +28,20 @@
 		A98618BE15588D85001D7354 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A98618C015588D85001D7354 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A98618C215588D85001D7354 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		A98618C615588D85001D7354 /* HumbleShame-Info.plist */ = {isa = PBXFileReference; path = "HumbleShame-Info.plist"; sourceTree = "<group>"; };
+		A98618C615588D85001D7354 /* HumbleShame-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HumbleShame-Info.plist"; sourceTree = "<group>"; };
 		A98618C815588D85001D7354 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A98618CA15588D85001D7354 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A98618CC15588D85001D7354 /* HumbleShame-Prefix.pch */ = {isa = PBXFileReference; path = "HumbleShame-Prefix.pch"; sourceTree = "<group>"; };
-		A98618CD15588D85001D7354 /* STAppDelegate.h */ = {isa = PBXFileReference; path = STAppDelegate.h; sourceTree = "<group>"; };
+		A98618CC15588D85001D7354 /* HumbleShame-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HumbleShame-Prefix.pch"; sourceTree = "<group>"; };
+		A98618CD15588D85001D7354 /* STAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STAppDelegate.h; sourceTree = "<group>"; };
 		A98618CE15588D85001D7354 /* STAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STAppDelegate.m; sourceTree = "<group>"; };
 		A98618D115588D85001D7354 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		A98618D415588D85001D7354 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		A98618D715588D85001D7354 /* HumbleShame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HumbleShame.xcdatamodel; sourceTree = "<group>"; };
-		A98618D915588D85001D7354 /* STMasterViewController.h */ = {isa = PBXFileReference; path = STMasterViewController.h; sourceTree = "<group>"; };
+		A98618D915588D85001D7354 /* STMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STMasterViewController.h; sourceTree = "<group>"; };
 		A98618DA15588D85001D7354 /* STMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STMasterViewController.m; sourceTree = "<group>"; };
-		A98618DC15588D85001D7354 /* STDetailViewController.h */ = {isa = PBXFileReference; path = STDetailViewController.h; sourceTree = "<group>"; };
+		A98618DC15588D85001D7354 /* STDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STDetailViewController.h; sourceTree = "<group>"; };
 		A98618DD15588D85001D7354 /* STDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STDetailViewController.m; sourceTree = "<group>"; };
+		A98618E815588E2C001D7354 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		A98618AD15588D84001D7354 = {
 			isa = PBXGroup;
 			children = (
+				A98618E815588E2C001D7354 /* .gitignore */,
 				A98618C415588D85001D7354 /* HumbleShame */,
 				A98618BB15588D85001D7354 /* Frameworks */,
 				A98618B915588D85001D7354 /* Products */,
@@ -168,6 +171,7 @@
 				A98618C915588D85001D7354 /* InfoPlist.strings in Resources */,
 				A98618D215588D85001D7354 /* MainStoryboard_iPhone.storyboard in Resources */,
 				A98618D515588D85001D7354 /* MainStoryboard_iPad.storyboard in Resources */,
+				A98618E915588E2C001D7354 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +308,7 @@
 				A98618E315588D85001D7354 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
