@@ -17,6 +17,8 @@
 		A94692831558910F0074648E /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A986190E15588FFC001D7354 /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A94692841558910F0074648E /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A986191015588FFC001D7354 /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A94692851558910F0074648E /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A986191215588FFC001D7354 /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A946929F155891A80074648E /* libBlocksKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9469294155891960074648E /* libBlocksKit.a */; };
+		A94692A51558921A0074648E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A94692A41558921A0074648E /* MessageUI.framework */; };
 		A98618BD15588D85001D7354 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98618BC15588D85001D7354 /* UIKit.framework */; };
 		A98618BF15588D85001D7354 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98618BE15588D85001D7354 /* Foundation.framework */; };
 		A98618C115588D85001D7354 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98618C015588D85001D7354 /* CoreGraphics.framework */; };
@@ -33,7 +35,54 @@
 		A98618FA15588FDA001D7354 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A98618F915588FDA001D7354 /* README.md */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A9469293155891960074648E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9469286155891910074648E /* BlocksKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6C3DBF8D1382F1BA00E6C9AA;
+			remoteInfo = "iOS Library";
+		};
+		A9469295155891960074648E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9469286155891910074648E /* BlocksKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6CC40A751447BB1400E47595;
+			remoteInfo = "OS X Framework";
+		};
+		A9469297155891960074648E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9469286155891910074648E /* BlocksKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6CC08FCE1385555D00DDEABB;
+			remoteInfo = "OS X Library";
+		};
+		A9469299155891960074648E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9469286155891910074648E /* BlocksKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6CC0900913855CAE00DDEABB;
+			remoteInfo = "Chameleon Library";
+		};
+		A946929B155891960074648E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9469286155891910074648E /* BlocksKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 60FF000713C023CB004A1394;
+			remoteInfo = "iOS Tests";
+		};
+		A946929D155891A00074648E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9469286155891910074648E /* BlocksKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C3DBF8C1382F1BA00E6C9AA;
+			remoteInfo = "iOS Library";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		A9469286155891910074648E /* BlocksKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BlocksKit.xcodeproj; path = Vendor/BlocksKit/BlocksKit.xcodeproj; sourceTree = SOURCE_ROOT; };
+		A94692A41558921A0074648E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A98618B815588D85001D7354 /* HumbleShame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HumbleShame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98618BC15588D85001D7354 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A98618BE15588D85001D7354 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -82,6 +131,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A94692A51558921A0074648E /* MessageUI.framework in Frameworks */,
+				A946929F155891A80074648E /* libBlocksKit.a in Frameworks */,
 				A98618BD15588D85001D7354 /* UIKit.framework in Frameworks */,
 				A98618BF15588D85001D7354 /* Foundation.framework in Frameworks */,
 				A98618C115588D85001D7354 /* CoreGraphics.framework in Frameworks */,
@@ -92,6 +143,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A9469287155891910074648E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A9469294155891960074648E /* libBlocksKit.a */,
+				A9469296155891960074648E /* BlocksKit.framework */,
+				A9469298155891960074648E /* BlocksKit.dylib */,
+				A946929A155891960074648E /* BlocksKit_Chameleon.dylib */,
+				A946929C155891960074648E /* iOS Tests.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		A98618AD15588D84001D7354 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +182,7 @@
 				A98618BE15588D85001D7354 /* Foundation.framework */,
 				A98618C015588D85001D7354 /* CoreGraphics.framework */,
 				A98618C215588D85001D7354 /* CoreData.framework */,
+				A94692A41558921A0074648E /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -181,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				A98618FD15588FFC001D7354 /* AFNetworking */,
+				A9469286155891910074648E /* BlocksKit.xcodeproj */,
 			);
 			name = Vendor;
 			path = ..;
@@ -228,6 +293,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A946929E155891A00074648E /* PBXTargetDependency */,
 			);
 			name = HumbleShame;
 			productName = HumbleShame;
@@ -254,12 +320,56 @@
 			mainGroup = A98618AD15588D84001D7354;
 			productRefGroup = A98618B915588D85001D7354 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A9469287155891910074648E /* Products */;
+					ProjectRef = A9469286155891910074648E /* BlocksKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A98618B715588D85001D7354 /* HumbleShame */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A9469294155891960074648E /* libBlocksKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBlocksKit.a;
+			remoteRef = A9469293155891960074648E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A9469296155891960074648E /* BlocksKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BlocksKit.framework;
+			remoteRef = A9469295155891960074648E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A9469298155891960074648E /* BlocksKit.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = BlocksKit.dylib;
+			remoteRef = A9469297155891960074648E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A946929A155891960074648E /* BlocksKit_Chameleon.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = BlocksKit_Chameleon.dylib;
+			remoteRef = A9469299155891960074648E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A946929C155891960074648E /* iOS Tests.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "iOS Tests.app";
+			remoteRef = A946929B155891960074648E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A98618B615588D85001D7354 /* Resources */ = {
@@ -300,6 +410,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A946929E155891A00074648E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "iOS Library";
+			targetProxy = A946929D155891A00074648E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A98618C715588D85001D7354 /* InfoPlist.strings */ = {
@@ -381,7 +499,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HumbleShame/HumbleShame-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Vendor/**";
 				INFOPLIST_FILE = "HumbleShame/HumbleShame-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -392,7 +515,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HumbleShame/HumbleShame-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Vendor/**";
 				INFOPLIST_FILE = "HumbleShame/HumbleShame-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
