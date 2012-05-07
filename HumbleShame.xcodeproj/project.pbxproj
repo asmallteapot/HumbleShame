@@ -26,6 +26,8 @@
 		A946939B155892E80074648E /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = A9469301155892E70074648E /* NSPersistentStoreCoordinator+MagicalRecord.m */; };
 		A946939C155892E80074648E /* MagicalRecordHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = A9469304155892E70074648E /* MagicalRecordHelpers.m */; };
 		A946939D155892E80074648E /* MRCoreDataAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A9469307155892E70074648E /* MRCoreDataAction.m */; };
+		A94693E8155897860074648E /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = A94693E7155897860074648E /* Tweet.m */; };
+		A94693EB155897860074648E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A94693EA155897860074648E /* User.m */; };
 		A98618BD15588D85001D7354 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98618BC15588D85001D7354 /* UIKit.framework */; };
 		A98618BF15588D85001D7354 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98618BE15588D85001D7354 /* Foundation.framework */; };
 		A98618C115588D85001D7354 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98618C015588D85001D7354 /* CoreGraphics.framework */; };
@@ -106,6 +108,10 @@
 		A9469305155892E70074648E /* MagicalRecordShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MagicalRecordShorthand.h; path = Source/MagicalRecordShorthand.h; sourceTree = "<group>"; };
 		A9469306155892E70074648E /* MRCoreDataAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRCoreDataAction.h; path = Source/MRCoreDataAction.h; sourceTree = "<group>"; };
 		A9469307155892E70074648E /* MRCoreDataAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRCoreDataAction.m; path = Source/MRCoreDataAction.m; sourceTree = "<group>"; };
+		A94693E6155897860074648E /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
+		A94693E7155897860074648E /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
+		A94693E9155897860074648E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		A94693EA155897860074648E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		A98618B815588D85001D7354 /* HumbleShame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HumbleShame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98618BC15588D85001D7354 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A98618BE15588D85001D7354 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -312,6 +318,10 @@
 			isa = PBXGroup;
 			children = (
 				A98618D615588D85001D7354 /* HumbleShame.xcdatamodeld */,
+				A94693E6155897860074648E /* Tweet.h */,
+				A94693E7155897860074648E /* Tweet.m */,
+				A94693E9155897860074648E /* User.h */,
+				A94693EA155897860074648E /* User.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -470,6 +480,8 @@
 				A946939B155892E80074648E /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				A946939C155892E80074648E /* MagicalRecordHelpers.m in Sources */,
 				A946939D155892E80074648E /* MRCoreDataAction.m in Sources */,
+				A94693E8155897860074648E /* Tweet.m in Sources */,
+				A94693EB155897860074648E /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
