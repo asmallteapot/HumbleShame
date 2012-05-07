@@ -20,6 +20,7 @@
 		A98618DB15588D85001D7354 /* STMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98618DA15588D85001D7354 /* STMasterViewController.m */; };
 		A98618DE15588D85001D7354 /* STDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98618DD15588D85001D7354 /* STDetailViewController.m */; };
 		A98618E915588E2C001D7354 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A98618E815588E2C001D7354 /* .gitignore */; };
+		A98618FA15588FDA001D7354 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A98618F915588FDA001D7354 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		A98618DC15588D85001D7354 /* STDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STDetailViewController.h; sourceTree = "<group>"; };
 		A98618DD15588D85001D7354 /* STDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STDetailViewController.m; sourceTree = "<group>"; };
 		A98618E815588E2C001D7354 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		A98618F915588FDA001D7354 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				A98618E815588E2C001D7354 /* .gitignore */,
+				A98618F915588FDA001D7354 /* README.md */,
 				A98618C415588D85001D7354 /* HumbleShame */,
 				A98618BB15588D85001D7354 /* Frameworks */,
 				A98618B915588D85001D7354 /* Products */,
@@ -172,6 +175,7 @@
 				A98618D215588D85001D7354 /* MainStoryboard_iPhone.storyboard in Resources */,
 				A98618D515588D85001D7354 /* MainStoryboard_iPad.storyboard in Resources */,
 				A98618E915588E2C001D7354 /* .gitignore in Resources */,
+				A98618FA15588FDA001D7354 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
