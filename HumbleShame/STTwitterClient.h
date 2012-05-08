@@ -8,7 +8,14 @@
 
 #import "AFHTTPClient.h"
 
+typedef void (^STTwitterClientSyncSuccessBlock)(NSSet *tweets);
+typedef void (^STTwitterClientSyncFailureBlock)(NSError *error);
+
 @interface STTwitterClient : AFHTTPClient
 
 + (STTwitterClient *)sharedClient;
+
+- (void)downloadTweets;
+- (void)downloadTweets:(STTwitterClientSyncSuccessBlock)successBlock;
+- (void)downloadTweets:(STTwitterClientSyncSuccessBlock)successBlock failure:(STTwitterClientSyncFailureBlock)failureBlock;
 @end
