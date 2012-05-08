@@ -8,6 +8,10 @@
 
 #import "STTimelineController.h"
 #import "STDetailViewController.h"
+#import "STTwitterClient.h"
+#import "SVPullToRefresh.h"
+#import "Tweet.h"
+#import "User.h"
 
 @interface STTimelineController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -18,6 +22,8 @@
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
 
+
+#pragma mark - View lifecycle
 - (void)awakeFromNib {
 	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
 		self.clearsSelectionOnViewWillAppear = NO;
@@ -26,20 +32,42 @@
 	[super awakeFromNib];
 }
 
+
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-	self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-	self.navigationItem.rightBarButtonItem = addButton;
-	self.detailViewController = (STDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+	
+	// Configure pull-to-refresh
+	[self.tableView addPullToRefreshWithActionHandler:^{
+		[[STTwitterClient sharedClient] downloadTweets:^(NSSet *tweets){
+			[self.tableView.pullToRefreshView stopAnimating];
+			
+			NSDate *lastUpdated = [[NSUserDefaults standardUserDefaults] objectForKey:kSTTwitterClientLastSync];
+			self.tableView.pullToRefreshView.lastUpdatedDate = lastUpdated;
+			// TODO load tweets into the table view
+			
+		} failure:^(NSError *error){
+			[self.tableView.pullToRefreshView stopAnimating];
+			// TODO handle errors
+		}];
+	}];
+	[self.tableView.pullToRefreshView triggerRefresh];
 }
+
 
 - (void)viewDidUnload {
 	[super viewDidUnload];
 	// Release any retained subviews of the main view.
 }
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	if ([[segue identifier] isEqualToString:@"showDetail"]) {
+		NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+		NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+		[segue.destinationViewController setDetailItem:object];
+	}
+}
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
@@ -49,84 +77,37 @@
 	}
 }
 
-- (void)insertNewObject:(id)sender {
-	NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-	NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-	NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-	
-	// If appropriate, configure the new managed object.
-	// Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-	[newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-	
-	// Save the context.
-	NSError *error = nil;
-	if (![context save:&error]) {
-		 // Replace this implementation with code to handle the error appropriately.
-		 // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		abort();
-	}
-}
 
-#pragma mark - Table View
-
+#pragma mark - Table View data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return [[self.fetchedResultsController sections] count];
+	return [self.fetchedResultsController.sections count];
 }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+	id<NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController.sections objectAtIndex:section];
 	return [sectionInfo numberOfObjects];
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell"];
 	[self configureCell:cell atIndexPath:indexPath];
 	return cell;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-	// Return NO if you do not want the specified item to be editable.
-	return YES;
-}
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (editingStyle == UITableViewCellEditingStyleDelete) {
-		NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-		[context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
-		
-		NSError *error = nil;
-		if (![context save:&error]) {
-			 // Replace this implementation with code to handle the error appropriately.
-			 // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-			NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-			abort();
-		}
-	}   
-}
-
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-	// The table view should not be re-orderable.
-	return NO;
-}
-
+#pragma mark - Table View delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	// iPad doesn’t support displaying detail items via segues
 	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-		NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-		self.detailViewController.detailItem = object;
+		Tweet *tweet = [self.fetchedResultsController objectAtIndexPath:indexPath];
+		self.detailViewController.detailItem = tweet;
 	}
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-	if ([[segue identifier] isEqualToString:@"showDetail"]) {
-		NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-		NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-		[[segue destinationViewController] setDetailItem:object];
-	}
-}
 
 #pragma mark - Fetched results controller
-
 - (NSFetchedResultsController *)fetchedResultsController {
 	if (__fetchedResultsController != nil) {
 		return __fetchedResultsController;
@@ -134,14 +115,14 @@
 	
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	// Edit the entity name as appropriate.
-	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Tweet" inManagedObjectContext:self.managedObjectContext];
 	[fetchRequest setEntity:entity];
 	
 	// Set the batch size to a suitable number.
 	[fetchRequest setFetchBatchSize:20];
 	
 	// Edit the sort key as appropriate.
-	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO];
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"createdAt" ascending:NO];
 	NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
 	
 	[fetchRequest setSortDescriptors:sortDescriptors];
@@ -161,11 +142,13 @@
 	}
 	
 	return __fetchedResultsController;
-}	
+}
+
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
 	[self.tableView beginUpdates];
 }
+
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
 		   atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
@@ -179,6 +162,7 @@
 			break;
 	}
 }
+
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
 	   atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
@@ -205,22 +189,16 @@
 	}
 }
 
+
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
 	[self.tableView endUpdates];
 }
 
-/*
-// Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed. 
- 
- - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-	// In the simplest, most efficient, case, reload the table view.
-	[self.tableView reloadData];
-}
- */
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-	NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-	cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
+	Tweet *tweet = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	cell.textLabel.text = tweet.text;
+	cell.detailTextLabel.text = tweet.user.name;
 }
 
 @end
