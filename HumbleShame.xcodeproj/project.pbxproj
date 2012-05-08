@@ -28,6 +28,7 @@
 		A946939D155892E80074648E /* MRCoreDataAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A9469307155892E70074648E /* MRCoreDataAction.m */; };
 		A94693E8155897860074648E /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = A94693E7155897860074648E /* Tweet.m */; };
 		A94693EB155897860074648E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A94693EA155897860074648E /* User.m */; };
+		A94693EE15589F060074648E /* STTwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A94693ED15589F060074648E /* STTwitterClient.m */; };
 		A98618BD15588D85001D7354 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98618BC15588D85001D7354 /* UIKit.framework */; };
 		A98618BF15588D85001D7354 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98618BE15588D85001D7354 /* Foundation.framework */; };
 		A98618C115588D85001D7354 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98618C015588D85001D7354 /* CoreGraphics.framework */; };
@@ -112,6 +113,8 @@
 		A94693E7155897860074648E /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
 		A94693E9155897860074648E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		A94693EA155897860074648E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		A94693EC15589F060074648E /* STTwitterClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTwitterClient.h; sourceTree = "<group>"; };
+		A94693ED15589F060074648E /* STTwitterClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STTwitterClient.m; sourceTree = "<group>"; };
 		A98618B815588D85001D7354 /* HumbleShame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HumbleShame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98618BC15588D85001D7354 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A98618BE15588D85001D7354 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -258,6 +261,8 @@
 				A986199615589027001D7354 /* Views */,
 				A98618CD15588D85001D7354 /* STAppDelegate.h */,
 				A98618CE15588D85001D7354 /* STAppDelegate.m */,
+				A94693EC15589F060074648E /* STTwitterClient.h */,
+				A94693ED15589F060074648E /* STTwitterClient.m */,
 				A98618CC15588D85001D7354 /* HumbleShame-Prefix.pch */,
 				A98618CA15588D85001D7354 /* main.m */,
 			);
@@ -482,6 +487,7 @@
 				A946939D155892E80074648E /* MRCoreDataAction.m in Sources */,
 				A94693E8155897860074648E /* Tweet.m in Sources */,
 				A94693EB155897860074648E /* User.m in Sources */,
+				A94693EE15589F060074648E /* STTwitterClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
