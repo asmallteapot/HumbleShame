@@ -97,14 +97,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="I managed to get on stage at Coachella but couldnt get into a sold out show at 285 Kent last night #loosingmyedge" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tIi-5l-S0i">
-                                            <rect key="frame" x="10" y="7" width="279" height="88"/>
+                                            <rect key="frame" x="10" y="24" width="298" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Sean Agnew" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LBc-gm-nus">
-                                            <rect key="frame" x="10" y="95" width="80" height="18"/>
+                                            <rect key="frame" x="10" y="78" width="80" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
@@ -151,6 +151,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/STTweetDetailController.h"/>
             <relationships>
                 <relationship kind="action" name="actionMenu:"/>
+                <relationship kind="action" name="imageTapped:" candidateClass="UIGestureRecognizer"/>
                 <relationship kind="outlet" name="profileImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="textLabel" candidateClass="UILabel"/>
             </relationships>
