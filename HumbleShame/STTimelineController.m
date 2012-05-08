@@ -7,7 +7,7 @@
 //
 
 #import "STTimelineController.h"
-#import "STDetailViewController.h"
+#import "STTweetDetailController.h"
 #import "STTwitterClient.h"
 #import "SVPullToRefresh.h"
 #import "Tweet.h"
@@ -68,10 +68,12 @@ NSString * const kSTTimelineTweetsCache = @"STTimelineTweetsCache";
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-	if ([[segue identifier] isEqualToString:@"showDetail"]) {
+	if ([[segue identifier] isEqualToString:@"DisplayTweet"]) {
 		NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-		NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-		[segue.destinationViewController setDetailItem:object];
+		Tweet *tweet = [self.fetchedResultsController objectAtIndexPath:indexPath];
+		
+		STTweetDetailController *detailController = segue.destinationViewController;
+		detailController.tweet = tweet;
 	}
 }
 
@@ -109,7 +111,7 @@ NSString * const kSTTimelineTweetsCache = @"STTimelineTweetsCache";
 	// iPad doesn’t support displaying detail items via segues
 	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
 		Tweet *tweet = [self.fetchedResultsController objectAtIndexPath:indexPath];
-		self.detailViewController.detailItem = tweet;
+		self.detailViewController.tweet = tweet;
 	}
 }
 

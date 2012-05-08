@@ -43,7 +43,7 @@
 		A98618D515588D85001D7354 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A98618D315588D85001D7354 /* MainStoryboard_iPad.storyboard */; };
 		A98618D815588D85001D7354 /* HumbleShame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A98618D615588D85001D7354 /* HumbleShame.xcdatamodeld */; };
 		A98618DB15588D85001D7354 /* STTimelineController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98618DA15588D85001D7354 /* STTimelineController.m */; };
-		A98618DE15588D85001D7354 /* STDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98618DD15588D85001D7354 /* STDetailViewController.m */; };
+		A98618DE15588D85001D7354 /* STTweetDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98618DD15588D85001D7354 /* STTweetDetailController.m */; };
 		A98618E915588E2C001D7354 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A98618E815588E2C001D7354 /* .gitignore */; };
 		A98618FA15588FDA001D7354 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A98618F915588FDA001D7354 /* README.md */; };
 /* End PBXBuildFile section */
@@ -138,8 +138,8 @@
 		A98618D715588D85001D7354 /* HumbleShame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HumbleShame.xcdatamodel; sourceTree = "<group>"; };
 		A98618D915588D85001D7354 /* STTimelineController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STTimelineController.h; sourceTree = "<group>"; };
 		A98618DA15588D85001D7354 /* STTimelineController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STTimelineController.m; sourceTree = "<group>"; };
-		A98618DC15588D85001D7354 /* STDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STDetailViewController.h; sourceTree = "<group>"; };
-		A98618DD15588D85001D7354 /* STDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STDetailViewController.m; sourceTree = "<group>"; };
+		A98618DC15588D85001D7354 /* STTweetDetailController.h */ = {isa = PBXFileReference; path = STTweetDetailController.h; sourceTree = "<group>"; };
+		A98618DD15588D85001D7354 /* STTweetDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STTweetDetailController.m; sourceTree = "<group>"; };
 		A98618E815588E2C001D7354 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A98618F915588FDA001D7354 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		A98618FE15588FFC001D7354 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
@@ -357,8 +357,8 @@
 			children = (
 				A98618D915588D85001D7354 /* STTimelineController.h */,
 				A98618DA15588D85001D7354 /* STTimelineController.m */,
-				A98618DC15588D85001D7354 /* STDetailViewController.h */,
-				A98618DD15588D85001D7354 /* STDetailViewController.m */,
+				A98618DC15588D85001D7354 /* STTweetDetailController.h */,
+				A98618DD15588D85001D7354 /* STTweetDetailController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -499,7 +499,7 @@
 				A98618CF15588D85001D7354 /* STAppDelegate.m in Sources */,
 				A98618D815588D85001D7354 /* HumbleShame.xcdatamodeld in Sources */,
 				A98618DB15588D85001D7354 /* STTimelineController.m in Sources */,
-				A98618DE15588D85001D7354 /* STDetailViewController.m in Sources */,
+				A98618DE15588D85001D7354 /* STTweetDetailController.m in Sources */,
 				A9469397155892E80074648E /* NSManagedObject+MagicalRecord.m in Sources */,
 				A9469398155892E80074648E /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				A9469399155892E80074648E /* NSManagedObjectModel+MagicalRecord.m in Sources */,

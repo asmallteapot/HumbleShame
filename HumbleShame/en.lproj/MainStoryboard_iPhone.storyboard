@@ -72,11 +72,11 @@
             </objects>
             <point key="canvasLocation" x="459" y="64"/>
         </scene>
-        <!--Detail View Controller - Detail-->
+        <!--Tweet Detail Controller - Tweet-->
         <scene sceneID="24">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="" title="Detail" id="21" customClass="STDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="" title="Tweet" id="21" customClass="STTweetDetailController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="22">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -91,20 +91,23 @@
                     <navigationItem key="navigationItem" title="Tweet" id="26">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="ppd-g1-Wrr"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="profileImageView" destination="9nm-Vd-0SN" id="kup-PC-NEA"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="902" y="64"/>
         </scene>
     </scenes>
     <classes>
-        <class className="STDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/STDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
         <class className="STTimelineController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/STTimelineController.h"/>
+        </class>
+        <class className="STTweetDetailController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/STTweetDetailController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="profileImageView" candidateClass="UIImageView"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

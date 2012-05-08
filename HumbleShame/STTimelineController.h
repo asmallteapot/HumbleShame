@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-@class STDetailViewController;
+@class STTweetDetailController;
 
 
 @interface STTimelineController : UITableViewController <NSFetchedResultsControllerDelegate>
 
-@property (strong, nonatomic) STDetailViewController *detailViewController;
+@property (strong, nonatomic) STTweetDetailController *detailViewController;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @end
