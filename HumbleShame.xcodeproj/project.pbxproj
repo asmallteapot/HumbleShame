@@ -29,6 +29,9 @@
 		A94693E8155897860074648E /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = A94693E7155897860074648E /* Tweet.m */; };
 		A94693EB155897860074648E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A94693EA155897860074648E /* User.m */; };
 		A94693EE15589F060074648E /* STTwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A94693ED15589F060074648E /* STTwitterClient.m */; };
+		A97D79CB15594A3800024764 /* SVPullToRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A97D79BB15594A3800024764 /* SVPullToRefresh.bundle */; };
+		A97D79CC15594A3800024764 /* SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = A97D79BD15594A3800024764 /* SVPullToRefresh.m */; };
+		A97D79D515594A6700024764 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97D79D415594A6700024764 /* QuartzCore.framework */; };
 		A98618BD15588D85001D7354 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98618BC15588D85001D7354 /* UIKit.framework */; };
 		A98618BF15588D85001D7354 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98618BE15588D85001D7354 /* Foundation.framework */; };
 		A98618C115588D85001D7354 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98618C015588D85001D7354 /* CoreGraphics.framework */; };
@@ -115,6 +118,10 @@
 		A94693EA155897860074648E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		A94693EC15589F060074648E /* STTwitterClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTwitterClient.h; sourceTree = "<group>"; };
 		A94693ED15589F060074648E /* STTwitterClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STTwitterClient.m; sourceTree = "<group>"; };
+		A97D79BB15594A3800024764 /* SVPullToRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SVPullToRefresh.bundle; path = SVPullToRefresh/SVPullToRefresh.bundle; sourceTree = "<group>"; };
+		A97D79BC15594A3800024764 /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVPullToRefresh.h; path = SVPullToRefresh/SVPullToRefresh.h; sourceTree = "<group>"; };
+		A97D79BD15594A3800024764 /* SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVPullToRefresh.m; path = SVPullToRefresh/SVPullToRefresh.m; sourceTree = "<group>"; };
+		A97D79D415594A6700024764 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A98618B815588D85001D7354 /* HumbleShame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HumbleShame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98618BC15588D85001D7354 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A98618BE15588D85001D7354 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -129,7 +136,7 @@
 		A98618D115588D85001D7354 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		A98618D415588D85001D7354 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		A98618D715588D85001D7354 /* HumbleShame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HumbleShame.xcdatamodel; sourceTree = "<group>"; };
-		A98618D915588D85001D7354 /* STTimelineController.h */ = {isa = PBXFileReference; path = STTimelineController.h; sourceTree = "<group>"; };
+		A98618D915588D85001D7354 /* STTimelineController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STTimelineController.h; sourceTree = "<group>"; };
 		A98618DA15588D85001D7354 /* STTimelineController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STTimelineController.m; sourceTree = "<group>"; };
 		A98618DC15588D85001D7354 /* STDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STDetailViewController.h; sourceTree = "<group>"; };
 		A98618DD15588D85001D7354 /* STDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STDetailViewController.m; sourceTree = "<group>"; };
@@ -163,12 +170,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A94692A51558921A0074648E /* MessageUI.framework in Frameworks */,
-				A946929F155891A80074648E /* libBlocksKit.a in Frameworks */,
-				A98618BD15588D85001D7354 /* UIKit.framework in Frameworks */,
 				A98618BF15588D85001D7354 /* Foundation.framework in Frameworks */,
 				A98618C115588D85001D7354 /* CoreGraphics.framework in Frameworks */,
 				A98618C315588D85001D7354 /* CoreData.framework in Frameworks */,
+				A94692A51558921A0074648E /* MessageUI.framework in Frameworks */,
+				A97D79D515594A6700024764 /* QuartzCore.framework in Frameworks */,
+				A98618BD15588D85001D7354 /* UIKit.framework in Frameworks */,
+				A946929F155891A80074648E /* libBlocksKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +228,17 @@
 			path = Source/Categories;
 			sourceTree = "<group>";
 		};
+		A97D79A615594A3800024764 /* SVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				A97D79BB15594A3800024764 /* SVPullToRefresh.bundle */,
+				A97D79BC15594A3800024764 /* SVPullToRefresh.h */,
+				A97D79BD15594A3800024764 /* SVPullToRefresh.m */,
+			);
+			name = SVPullToRefresh;
+			path = Vendor/SVPullToRefresh;
+			sourceTree = SOURCE_ROOT;
+		};
 		A98618AD15588D84001D7354 = {
 			isa = PBXGroup;
 			children = (
@@ -243,11 +262,12 @@
 		A98618BB15588D85001D7354 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A98618BC15588D85001D7354 /* UIKit.framework */,
 				A98618BE15588D85001D7354 /* Foundation.framework */,
 				A98618C015588D85001D7354 /* CoreGraphics.framework */,
 				A98618C215588D85001D7354 /* CoreData.framework */,
 				A94692A41558921A0074648E /* MessageUI.framework */,
+				A97D79D415594A6700024764 /* QuartzCore.framework */,
+				A98618BC15588D85001D7354 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -314,6 +334,7 @@
 				A98618FD15588FFC001D7354 /* AFNetworking */,
 				A9469286155891910074648E /* BlocksKit.xcodeproj */,
 				A94692B4155892E70074648E /* MagicalRecord */,
+				A97D79A615594A3800024764 /* SVPullToRefresh */,
 			);
 			name = Vendor;
 			path = ..;
@@ -453,6 +474,7 @@
 				A98618D515588D85001D7354 /* MainStoryboard_iPad.storyboard in Resources */,
 				A98618E915588E2C001D7354 /* .gitignore in Resources */,
 				A98618FA15588FDA001D7354 /* README.md in Resources */,
+				A97D79CB15594A3800024764 /* SVPullToRefresh.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +510,7 @@
 				A94693E8155897860074648E /* Tweet.m in Sources */,
 				A94693EB155897860074648E /* User.m in Sources */,
 				A94693EE15589F060074648E /* STTwitterClient.m in Sources */,
+				A97D79CC15594A3800024764 /* SVPullToRefresh.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

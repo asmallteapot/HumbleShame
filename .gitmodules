@@ -7,3 +7,6 @@
 [submodule "Vendor/MagicalRecord"]
 	path = Vendor/MagicalRecord
 	url = https://github.com/magicalpanda/MagicalRecord.git
+[submodule "Vendor/SVPullToRefresh"]
+	path = Vendor/SVPullToRefresh
+	url = https://github.com/samvermette/SVPullToRefresh.git
