@@ -17,11 +17,12 @@
 @end
 
 @implementation STTweetDetailController
+@synthesize fullScreen = _fullScreen;
 @synthesize tweet = _tweet;
 @synthesize profileImageView = _profileImageView;
 @synthesize masterPopoverController = _masterPopoverController;
 
-#pragma mark - Tweet accessor
+#pragma mark - Property accessors
 - (void)setTweet:(Tweet *)newTweet {
 	if (_tweet != newTweet) {
 		_tweet = newTweet;
@@ -33,13 +34,20 @@
 	}		
 }
 
-- (void)configureView {
-	if (self.tweet) {
-		NSURL *profileImageURL = [NSURL URLWithString:self.tweet.user.profileImageURL];
-		[self.profileImageView setImageWithURL:profileImageURL];
-	} else {
-		self.profileImageView.image = nil;
-		// TODO display a placeholder image
+
+- (void)setFullScreen:(BOOL)shouldBeFullScreen {
+	if (_fullScreen != shouldBeFullScreen) {
+		if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+			if (shouldBeFullScreen) {
+				self.profileImageView.frame = [[UIScreen mainScreen] applicationFrame];
+			} else {
+				self.profileImageView.frame = self.view.frame;
+			}
+		}
+		
+		[[UIApplication sharedApplication] setStatusBarHidden:shouldBeFullScreen];
+		self.navigationController.navigationBarHidden = shouldBeFullScreen;
+		_fullScreen = shouldBeFullScreen;
 	}
 }
 
@@ -48,11 +56,28 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	[self configureView];
+	
+	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+		[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
+		self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+		self.profileImageView.frame = [[UIScreen mainScreen] applicationFrame];
+	}
 }
 
 - (void)viewDidUnload {
 	[super viewDidUnload];
 	self.profileImageView = nil;
+}
+
+
+- (void)configureView {
+	if (self.tweet) {
+		NSURL *profileImageURL = [NSURL URLWithString:self.tweet.user.profileImageURL];
+		[self.profileImageView setImageWithURL:profileImageURL];
+	} else {
+		self.profileImageView.image = nil;
+		// TODO display a placeholder image
+	}
 }
 
 
@@ -87,7 +112,8 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
 	switch (buttonIndex) {
 		case 0:
-			// Full Screen
+			// Toggle full-screen mode
+			self.fullScreen = !self.fullScreen;
 			break;
 		case 1: 
 			// Tweet

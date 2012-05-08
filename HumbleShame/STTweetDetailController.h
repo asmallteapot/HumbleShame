@@ -10,8 +10,9 @@
 @class Tweet;
 
 @interface STTweetDetailController : UIViewController <UIActionSheetDelegate, UISplitViewControllerDelegate>
-@property (strong, nonatomic) Tweet *tweet;
 @property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (strong, nonatomic) Tweet *tweet;
+@property (nonatomic) BOOL fullScreen;
 
 - (IBAction)actionMenu:(id)sender;
 @end
