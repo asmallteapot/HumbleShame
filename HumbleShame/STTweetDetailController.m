@@ -7,6 +7,7 @@
 //
 
 #import "STTweetDetailController.h"
+#import <Twitter/Twitter.h>
 #import "Tweet.h"
 #import "User.h"
 
@@ -71,14 +72,26 @@
 }
 
 
+- (IBAction)sendTweet:(id)sender {
+	// As of iOS 5.1, we only need to call this to prompt the user to sign in
+	[TWTweetComposeViewController canSendTweet];
+	
+	TWTweetComposeViewController *tweetComposer = [[TWTweetComposeViewController alloc] init];
+	[tweetComposer setInitialText:[NSString stringWithFormat:@"Nice #humblebrag, @%@:", self.tweet.user.screenName]];
+	[tweetComposer addURL:[NSURL URLWithString:self.tweet.permalink]];
+	[self presentModalViewController:tweetComposer animated:YES];
+}
+
+
 #pragma mark - Action Sheet delegate
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
 	switch (buttonIndex) {
 		case 0:
 			// Full Screen
 			break;
-		case 1:
+		case 1: 
 			// Tweet
+			[self sendTweet:actionSheet];
 			break;
 	}
 }

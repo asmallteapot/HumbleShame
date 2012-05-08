@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A934072C15596A9D00933830 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A934072B15596A9D00933830 /* Twitter.framework */; };
 		A946927C1558910F0074648E /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A98618FF15588FFC001D7354 /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A946927D1558910F0074648E /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A986190115588FFC001D7354 /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A946927E1558910F0074648E /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A986190315588FFC001D7354 /* AFImageRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -94,6 +95,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A934072B15596A9D00933830 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		A9469286155891910074648E /* BlocksKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BlocksKit.xcodeproj; path = Vendor/BlocksKit/BlocksKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		A94692A41558921A0074648E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A94692F8155892E70074648E /* NSManagedObject+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+MagicalRecord.h"; sourceTree = "<group>"; };
@@ -138,7 +140,7 @@
 		A98618D715588D85001D7354 /* HumbleShame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HumbleShame.xcdatamodel; sourceTree = "<group>"; };
 		A98618D915588D85001D7354 /* STTimelineController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STTimelineController.h; sourceTree = "<group>"; };
 		A98618DA15588D85001D7354 /* STTimelineController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STTimelineController.m; sourceTree = "<group>"; };
-		A98618DC15588D85001D7354 /* STTweetDetailController.h */ = {isa = PBXFileReference; path = STTweetDetailController.h; sourceTree = "<group>"; };
+		A98618DC15588D85001D7354 /* STTweetDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STTweetDetailController.h; sourceTree = "<group>"; };
 		A98618DD15588D85001D7354 /* STTweetDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STTweetDetailController.m; sourceTree = "<group>"; };
 		A98618E815588E2C001D7354 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A98618F915588FDA001D7354 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				A98618C315588D85001D7354 /* CoreData.framework in Frameworks */,
 				A94692A51558921A0074648E /* MessageUI.framework in Frameworks */,
 				A97D79D515594A6700024764 /* QuartzCore.framework in Frameworks */,
+				A934072C15596A9D00933830 /* Twitter.framework in Frameworks */,
 				A98618BD15588D85001D7354 /* UIKit.framework in Frameworks */,
 				A946929F155891A80074648E /* libBlocksKit.a in Frameworks */,
 			);
@@ -267,6 +270,7 @@
 				A98618C215588D85001D7354 /* CoreData.framework */,
 				A94692A41558921A0074648E /* MessageUI.framework */,
 				A97D79D415594A6700024764 /* QuartzCore.framework */,
+				A934072B15596A9D00933830 /* Twitter.framework */,
 				A98618BC15588D85001D7354 /* UIKit.framework */,
 			);
 			name = Frameworks;
