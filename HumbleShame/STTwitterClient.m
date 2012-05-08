@@ -12,6 +12,8 @@
 NSString * const kSTTwitterAPIBaseURLString = @"https://api.twitter.com/1/";
 NSString * const kSTTwitterClientSyncCompleted = @"STTwitterClientSyncCompleted";
 NSString * const kSTTwitterClientSyncFailed = @"STTwitterClientSyncFailed";
+NSString * const kSTTwitterClientLastSync = @"STTwitterClientLastSync";
+
 
 @implementation STTwitterClient
 
@@ -68,6 +70,9 @@ NSString * const kSTTwitterClientSyncFailed = @"STTwitterClientSyncFailed";
 			Tweet *tweet = [[Tweet alloc] initWithAttributes:tweetData];
 			[newTweets addObject:tweet];
 		}
+		
+		// save the last-sync time to the defaults
+		[[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:kSTTwitterClientLastSync];
 		
 		// TODO only send notification if block isn't provided?
 		// TODO check if sending newTweets slows anything down
