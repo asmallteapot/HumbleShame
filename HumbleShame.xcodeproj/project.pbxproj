@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A934072C15596A9D00933830 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A934072B15596A9D00933830 /* Twitter.framework */; };
-		A93407491559903F00933830 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A93407451559903900933830 /* Icon.png */; };
-		A934074A1559904200933830 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A93407461559903900933830 /* Icon@2x.png */; };
 		A946927C1558910F0074648E /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A98618FF15588FFC001D7354 /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A946927D1558910F0074648E /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A986190115588FFC001D7354 /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A946927E1558910F0074648E /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A986190315588FFC001D7354 /* AFImageRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -98,15 +96,15 @@
 
 /* Begin PBXFileReference section */
 		A934072B15596A9D00933830 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
-		A93407401559903900933830 /* HumbleShame.acorn */ = {isa = PBXFileReference; lastKnownFileType = file; path = HumbleShame.acorn; sourceTree = SOURCE_ROOT; };
-		A93407411559903900933830 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = SOURCE_ROOT; };
-		A93407421559903900933830 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = SOURCE_ROOT; };
-		A93407431559903900933830 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = SOURCE_ROOT; };
-		A93407441559903900933830 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = SOURCE_ROOT; };
-		A93407451559903900933830 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = SOURCE_ROOT; };
-		A93407461559903900933830 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = SOURCE_ROOT; };
-		A93407471559903900933830 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = SOURCE_ROOT; };
-		A93407481559903900933830 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = SOURCE_ROOT; };
+		A934074C155990E600933830 /* HumbleShame.acorn */ = {isa = PBXFileReference; lastKnownFileType = file; name = HumbleShame.acorn; path = Resources/HumbleShame.acorn; sourceTree = SOURCE_ROOT; };
+		A934074D155990E600933830 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Resources/Icon-72.png"; sourceTree = SOURCE_ROOT; };
+		A934074E155990E600933830 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "Resources/Icon-Small-50.png"; sourceTree = SOURCE_ROOT; };
+		A934074F155990E600933830 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Resources/Icon-Small.png"; sourceTree = SOURCE_ROOT; };
+		A9340750155990E600933830 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "Resources/Icon-Small@2x.png"; sourceTree = SOURCE_ROOT; };
+		A9340751155990E600933830 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Icon.png; sourceTree = SOURCE_ROOT; };
+		A9340752155990E600933830 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Resources/Icon@2x.png"; sourceTree = SOURCE_ROOT; };
+		A9340753155990E600933830 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iTunesArtwork.png; path = Resources/iTunesArtwork.png; sourceTree = SOURCE_ROOT; };
+		A9340754155990E600933830 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iTunesArtwork@2x.png"; path = "Resources/iTunesArtwork@2x.png"; sourceTree = SOURCE_ROOT; };
 		A9469286155891910074648E /* BlocksKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BlocksKit.xcodeproj; path = Vendor/BlocksKit/BlocksKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		A94692A41558921A0074648E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A94692F8155892E70074648E /* NSManagedObject+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+MagicalRecord.h"; sourceTree = "<group>"; };
@@ -200,15 +198,15 @@
 		A934074B1559904D00933830 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A93407401559903900933830 /* HumbleShame.acorn */,
-				A93407411559903900933830 /* Icon-72.png */,
-				A93407421559903900933830 /* Icon-Small-50.png */,
-				A93407431559903900933830 /* Icon-Small.png */,
-				A93407441559903900933830 /* Icon-Small@2x.png */,
-				A93407451559903900933830 /* Icon.png */,
-				A93407461559903900933830 /* Icon@2x.png */,
-				A93407471559903900933830 /* iTunesArtwork.png */,
-				A93407481559903900933830 /* iTunesArtwork@2x.png */,
+				A934074C155990E600933830 /* HumbleShame.acorn */,
+				A934074D155990E600933830 /* Icon-72.png */,
+				A934074E155990E600933830 /* Icon-Small-50.png */,
+				A934074F155990E600933830 /* Icon-Small.png */,
+				A9340750155990E600933830 /* Icon-Small@2x.png */,
+				A9340751155990E600933830 /* Icon.png */,
+				A9340752155990E600933830 /* Icon@2x.png */,
+				A9340753155990E600933830 /* iTunesArtwork.png */,
+				A9340754155990E600933830 /* iTunesArtwork@2x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -507,8 +505,6 @@
 				A98618E915588E2C001D7354 /* .gitignore in Resources */,
 				A98618FA15588FDA001D7354 /* README.md in Resources */,
 				A97D79CB15594A3800024764 /* SVPullToRefresh.bundle in Resources */,
-				A93407491559903F00933830 /* Icon.png in Resources */,
-				A934074A1559904200933830 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
