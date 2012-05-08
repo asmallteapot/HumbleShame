@@ -46,12 +46,12 @@ NSString * const kSTTwitterClientLastSync = @"STTwitterClientLastSync";
 
 #pragma mark - Tweets
 - (void)downloadTweets {
-	[self downloadTweets:nil failure:nil];
+	[self downloadTweets:nil withParameters:nil failure:nil];
 }
 
 
 - (void)downloadTweets:(STTwitterClientSyncSuccessBlock)successBlock {
-	[self downloadTweets:successBlock failure:nil];
+	[self downloadTweets:successBlock withParameters:nil failure:nil];
 }
 
 
@@ -60,8 +60,24 @@ NSString * const kSTTwitterClientLastSync = @"STTwitterClientLastSync";
 	[timelineParams setObject:@"humblebrag" forKey:@"screen_name"];
 	[timelineParams setObject:@"100" forKey:@"count"];
 	[timelineParams setObject:@"true" forKey:@"include_entities"];
+	
+	return [self downloadTweets:successBlock withParameters:timelineParams failure:failureBlock];
+}
 
-	[self.class.sharedClient getPath:@"statuses/retweeted_by_user.json" parameters:timelineParams success:^(AFHTTPRequestOperation *operation, id JSON) {
+
+- (void)downloadTweets:(STTwitterClientSyncSuccessBlock)successBlock afterTweetID:(NSString *)tweetID failure:(STTwitterClientSyncFailureBlock)failureBlock {
+	NSMutableDictionary *timelineParams = [NSMutableDictionary dictionary];
+	[timelineParams setObject:@"humblebrag" forKey:@"screen_name"];
+	[timelineParams setObject:@"100" forKey:@"count"];
+	[timelineParams setObject:@"true" forKey:@"include_entities"];
+	[timelineParams setObject:tweetID forKey:@"max_id"];
+	
+	return [self downloadTweets:successBlock withParameters:timelineParams failure:failureBlock];
+}
+
+
+- (void)downloadTweets:(STTwitterClientSyncSuccessBlock)successBlock withParameters:(NSDictionary *)parameters failure:(STTwitterClientSyncFailureBlock)failureBlock {
+	[self.class.sharedClient getPath:@"statuses/retweeted_by_user.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id JSON) {
 		NSMutableSet *newTweets = [NSMutableSet set];
 		// TODO handle errors
 		// the top-level JSON object should be a dictionary.

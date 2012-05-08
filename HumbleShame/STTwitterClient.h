@@ -23,4 +23,6 @@ typedef void (^STTwitterClientSyncFailureBlock)(NSError *error);
 - (void)downloadTweets;
 - (void)downloadTweets:(STTwitterClientSyncSuccessBlock)successBlock;
 - (void)downloadTweets:(STTwitterClientSyncSuccessBlock)successBlock failure:(STTwitterClientSyncFailureBlock)failureBlock;
+- (void)downloadTweets:(STTwitterClientSyncSuccessBlock)successBlock afterTweetID:(NSString *)tweetID failure:(STTwitterClientSyncFailureBlock)failureBlock;
+- (void)downloadTweets:(STTwitterClientSyncSuccessBlock)successBlock withParameters:(NSDictionary *)parameters failure:(STTwitterClientSyncFailureBlock)failureBlock;
 @end
