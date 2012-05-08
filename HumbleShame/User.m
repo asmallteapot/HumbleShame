@@ -23,8 +23,12 @@
 	if (!self) {
 		return nil;
 	}
-	
-	// TODO map JSON dictionary to Core Data properties
+		
+	// map JSON dictionary to Core Data properties
+	self.userID = [attributes objectForKey:@"id_str"];
+	self.bio = [attributes objectForKey:@"description"];
+	self.screenName = [attributes objectForKey:@"screen_name"];
+	self.profileImageURL = [attributes objectForKey:@"profile_image_url"];
 	
 	return self;
 }
