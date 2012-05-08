@@ -12,6 +12,7 @@
 @implementation Tweet
 @dynamic uniqueID;
 @dynamic createdAt;
+@dynamic permalink;
 @dynamic text;
 @dynamic user;
 

@@ -11,9 +11,10 @@
 @class User;
 
 @interface Tweet : NSManagedObject
-@property (nonatomic, retain) NSString * uniqueID;
-@property (nonatomic, retain) NSDate * createdAt;
-@property (nonatomic, retain) NSString * text;
+@property (nonatomic, retain) NSString *uniqueID;
+@property (nonatomic, retain) NSDate *createdAt;
+@property (nonatomic, retain) NSString *permalink;
+@property (nonatomic, retain) NSString *text;
 @property (nonatomic, retain) User *user;
 
 - (id)initWithAttributes:(NSDictionary *)attributes;
