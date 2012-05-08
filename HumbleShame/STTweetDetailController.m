@@ -20,6 +20,7 @@
 @synthesize fullScreen = _fullScreen;
 @synthesize tweet = _tweet;
 @synthesize profileImageView = _profileImageView;
+@synthesize textLabel = _textLabel;
 @synthesize masterPopoverController = _masterPopoverController;
 
 #pragma mark - Property accessors
@@ -65,6 +66,7 @@
 }
 
 - (void)viewDidUnload {
+	[self setTextLabel:nil];
 	[super viewDidUnload];
 	self.profileImageView = nil;
 }
@@ -74,9 +76,13 @@
 	if (self.tweet) {
 		NSURL *profileImageURL = [NSURL URLWithString:self.tweet.user.profileImageURL];
 		[self.profileImageView setImageWithURL:profileImageURL];
+		
+		self.textLabel.text = self.tweet.text;
+		self.textLabel.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.45];
 	} else {
-		self.profileImageView.image = nil;
 		// TODO display a placeholder image
+		self.profileImageView.image = nil;
+		self.textLabel.backgroundColor = [UIColor clearColor];
 	}
 }
 

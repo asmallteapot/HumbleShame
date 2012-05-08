@@ -11,6 +11,7 @@
 
 @interface STTweetDetailController : UIViewController <UIActionSheetDelegate, UISplitViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (weak, nonatomic) IBOutlet UILabel *textLabel;
 @property (strong, nonatomic) Tweet *tweet;
 @property (nonatomic) BOOL fullScreen;
 
