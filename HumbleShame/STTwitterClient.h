@@ -8,11 +8,16 @@
 
 #import "AFHTTPClient.h"
 
+extern NSString * const kSTTwitterAPIBaseURLString;
+extern NSString * const kSTTwitterClientSyncCompleted;
+extern NSString * const kSTTwitterClientSyncFailed;
+extern NSString * const kSTTwitterClientLastSync;
+
 typedef void (^STTwitterClientSyncSuccessBlock)(NSSet *tweets);
 typedef void (^STTwitterClientSyncFailureBlock)(NSError *error);
 
-@interface STTwitterClient : AFHTTPClient
 
+@interface STTwitterClient : AFHTTPClient
 + (STTwitterClient *)sharedClient;
 
 - (void)downloadTweets;
