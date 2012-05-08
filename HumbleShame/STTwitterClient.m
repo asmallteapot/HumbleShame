@@ -66,9 +66,13 @@ NSString * const kSTTwitterClientLastSync = @"STTwitterClientLastSync";
 		// TODO handle errors
 		// the top-level JSON object should be a dictionary.
 		// Twitter might changed the API though.
+
 		for (NSDictionary *tweetData in JSON) {
-			Tweet *tweet = [Tweet createEntityWithAttributes:tweetData];
-			[newTweets addObject:tweet];
+			NSString *tweetID = [[tweetData objectForKey:@"retweeted_status"] objectForKey:@"id_str"];
+			if (![Tweet findFirstByAttribute:@"uniqueID" withValue:tweetID]) {
+				Tweet *tweet = [Tweet createEntityWithAttributes:tweetData];
+				[newTweets addObject:tweet];
+			}
 		}
 
 		// persist downloaded tweets
