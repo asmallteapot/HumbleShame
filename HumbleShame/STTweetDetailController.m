@@ -38,16 +38,8 @@
 
 - (void)setFullScreen:(BOOL)shouldBeFullScreen {
 	if (_fullScreen != shouldBeFullScreen) {
-		if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-			if (shouldBeFullScreen) {
-				self.profileImageView.frame = [[UIScreen mainScreen] applicationFrame];
-			} else {
-				self.profileImageView.frame = self.view.frame;
-			}
-		}
-		
 		[[UIApplication sharedApplication] setStatusBarHidden:shouldBeFullScreen];
-		self.navigationController.navigationBarHidden = shouldBeFullScreen;
+		[self.navigationController setNavigationBarHidden:shouldBeFullScreen animated:YES];
 		self.textLabel.hidden = shouldBeFullScreen;
 		_fullScreen = shouldBeFullScreen;
 	}
@@ -57,12 +49,22 @@
 #pragma mark - View lifecycle
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	self.profileImageView.frame = [[UIScreen mainScreen] bounds];
 	[self configureView];
-	
+}
+
+- (void)viewWillAppear:(BOOL)animated {
 	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
 		[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
 		self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
-		self.profileImageView.frame = [[UIScreen mainScreen] applicationFrame];
+	}
+}
+
+
+- (void)viewWillDisappear:(BOOL)animated {
+	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+		[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+		self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
 	}
 }
 
