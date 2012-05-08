@@ -58,7 +58,7 @@ NSString * const kSTTwitterClientLastSync = @"STTwitterClientLastSync";
 - (void)downloadTweets:(STTwitterClientSyncSuccessBlock)successBlock failure:(STTwitterClientSyncFailureBlock)failureBlock {
 	NSMutableDictionary *timelineParams = [NSMutableDictionary dictionary];
 	[timelineParams setObject:@"humblebrag" forKey:@"screen_name"];
-	[timelineParams setObject:@"10" forKey:@"count"];
+	[timelineParams setObject:@"100" forKey:@"count"];
 	[timelineParams setObject:@"true" forKey:@"include_entities"];
 
 	[self.class.sharedClient getPath:@"statuses/retweeted_by_user.json" parameters:timelineParams success:^(AFHTTPRequestOperation *operation, id JSON) {
