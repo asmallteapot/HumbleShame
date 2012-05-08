@@ -16,4 +16,5 @@
 @property (nonatomic) BOOL fullScreen;
 
 - (IBAction)actionMenu:(id)sender;
+- (IBAction)imageTapped:(UIGestureRecognizer *)recognizer;
 @end

@@ -48,6 +48,7 @@
 		
 		[[UIApplication sharedApplication] setStatusBarHidden:shouldBeFullScreen];
 		self.navigationController.navigationBarHidden = shouldBeFullScreen;
+		self.textLabel.hidden = shouldBeFullScreen;
 		_fullScreen = shouldBeFullScreen;
 	}
 }
@@ -98,8 +99,16 @@
 
 #pragma mark - IB Actions
 - (IBAction)actionMenu:(id)sender {
-	UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Full Screen", @"Tweet", nil];
+	UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Tweet", nil];
 	[sheet showFromBarButtonItem:self.navigationItem.rightBarButtonItem animated:YES];
+}
+
+
+- (IBAction)imageTapped:(UITapGestureRecognizer *)recognizer {
+	// Toggle full-screen mode
+	if (recognizer.state == UIGestureRecognizerStateEnded) {
+		self.fullScreen = !self.fullScreen;
+	}
 }
 
 
@@ -117,11 +126,7 @@
 #pragma mark - Action Sheet delegate
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
 	switch (buttonIndex) {
-		case 0:
-			// Toggle full-screen mode
-			self.fullScreen = !self.fullScreen;
-			break;
-		case 1: 
+		case 0: 
 			// Tweet
 			[self sendTweet:actionSheet];
 			break;
