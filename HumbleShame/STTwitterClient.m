@@ -67,10 +67,15 @@ NSString * const kSTTwitterClientLastSync = @"STTwitterClientLastSync";
 		// the top-level JSON object should be a dictionary.
 		// Twitter might changed the API though.
 		for (NSDictionary *tweetData in JSON) {
-			Tweet *tweet = [[Tweet alloc] initWithAttributes:tweetData];
+			Tweet *tweet = [Tweet createEntityWithAttributes:tweetData];
 			[newTweets addObject:tweet];
 		}
-		
+
+		// persist downloaded tweets
+		[[NSManagedObjectContext defaultContext] saveWithErrorHandler:^(NSError *error){
+			NSLog(@"Core Data error: %@\nuserInfo: %@", error, error.userInfo);
+		}];
+
 		// save the last-sync time to the defaults
 		[[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:kSTTwitterClientLastSync];
 		

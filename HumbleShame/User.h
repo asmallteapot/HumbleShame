@@ -19,7 +19,7 @@
 @property (nonatomic, retain) NSString * profileImageURL;
 @property (nonatomic, retain) NSSet *tweets;
 
-- (id)initWithAttributes:(NSDictionary *)attributes;
++ (id)createEntityWithAttributes:(NSDictionary *)attributes;
 
 // Friendlier Core Data accessors
 - (void)addTweet:(Tweet *)newTweet;

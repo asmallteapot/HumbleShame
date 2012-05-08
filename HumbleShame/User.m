@@ -18,19 +18,19 @@
 @dynamic profileImageURL;
 @dynamic tweets;
 
-- (id)initWithAttributes:(NSDictionary *)attributes {
-	self = [super init];
-	if (!self) {
++ (id)createEntityWithAttributes:(NSDictionary *)attributes {
+	User *newUser = [User createEntity];
+	if (!newUser) {
 		return nil;
 	}
 		
 	// map JSON dictionary to Core Data properties
-	self.userID = [attributes objectForKey:@"id_str"];
-	self.bio = [attributes objectForKey:@"description"];
-	self.screenName = [attributes objectForKey:@"screen_name"];
-	self.profileImageURL = [attributes objectForKey:@"profile_image_url"];
+	newUser.userID = [attributes objectForKey:@"id_str"];
+	newUser.bio = [attributes objectForKey:@"description"];
+	newUser.screenName = [attributes objectForKey:@"screen_name"];
+	newUser.profileImageURL = [attributes objectForKey:@"profile_image_url"];
 	
-	return self;
+	return newUser;
 }
 
 

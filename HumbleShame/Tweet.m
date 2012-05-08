@@ -16,9 +16,9 @@
 @dynamic text;
 @dynamic user;
 
-- (id)initWithAttributes:(NSDictionary *)attributes {
-	self = [super init];
-	if (!self) {
++ (id)createEntityWithAttributes:(NSDictionary *)attributes {
+	Tweet *newTweet = [Tweet createEntity];
+	if (!newTweet) {
 		return nil;
 	}
 	
@@ -33,16 +33,17 @@
 	// find or create the user for this tweet
 	User *originalAuthor = [User findFirstByAttribute:@"userID" withValue:[authorData objectForKey:@"id_str"]];
 	if (!originalAuthor) {
-		originalAuthor = [[User alloc] initWithAttributes:authorData];
+		originalAuthor = [User createEntityWithAttributes:authorData];
 	}
+	newTweet.user = originalAuthor;
 	
 	// now save data about the original tweet itself
-	self.uniqueID = [retweetData objectForKey:@"id_str"];
-	self.createdAt = [dateFormatter dateFromString:[retweetData objectForKey:@"created_at"]];
-	self.permalink = [retweetData objectForKey:@""]; // not provided by API?
-	self.text = [retweetData objectForKey:@"text"];
+	newTweet.uniqueID = [retweetData objectForKey:@"id_str"];
+	newTweet.createdAt = [dateFormatter dateFromString:[retweetData objectForKey:@"created_at"]];
+	newTweet.permalink = [retweetData objectForKey:@""]; // not provided by API?
+	newTweet.text = [retweetData objectForKey:@"text"];
 	
-	return self;
+	return newTweet;
 }
 
 @end

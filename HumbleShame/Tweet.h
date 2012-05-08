@@ -17,5 +17,5 @@
 @property (nonatomic, retain) NSString *text;
 @property (nonatomic, retain) User *user;
 
-- (id)initWithAttributes:(NSDictionary *)attributes;
++ (id)createEntityWithAttributes:(NSDictionary *)attributes;
 @end
