@@ -64,6 +64,25 @@
 }
 
 
+#pragma mark - IB Actions
+- (IBAction)actionMenu:(id)sender {
+	UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Full Screen", @"Tweet", nil];
+	[sheet showFromBarButtonItem:self.navigationItem.rightBarButtonItem animated:YES];
+}
+
+
+#pragma mark - Action Sheet delegate
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+	switch (buttonIndex) {
+		case 0:
+			// Full Screen
+			break;
+		case 1:
+			// Tweet
+			break;
+	}
+}
+
 #pragma mark - Split View delegate
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController {
 	barButtonItem.title = NSLocalizedString(@"Timeline", @"Timeline");

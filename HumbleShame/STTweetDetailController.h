@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 @class Tweet;
 
-@interface STTweetDetailController : UIViewController <UISplitViewControllerDelegate>
+@interface STTweetDetailController : UIViewController <UIActionSheetDelegate, UISplitViewControllerDelegate>
 @property (strong, nonatomic) Tweet *tweet;
 @property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
+
+- (IBAction)actionMenu:(id)sender;
 @end

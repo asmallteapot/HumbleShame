@@ -89,7 +89,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tweet" id="26">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="ppd-g1-Wrr"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="ppd-g1-Wrr">
+                            <connections>
+                                <action selector="actionMenu:" destination="21" id="2Mh-IS-7ax"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="profileImageView" destination="9nm-Vd-0SN" id="kup-PC-NEA"/>
@@ -106,6 +110,7 @@
         <class className="STTweetDetailController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/STTweetDetailController.h"/>
             <relationships>
+                <relationship kind="action" name="actionMenu:"/>
                 <relationship kind="outlet" name="profileImageView" candidateClass="UIImageView"/>
             </relationships>
         </class>

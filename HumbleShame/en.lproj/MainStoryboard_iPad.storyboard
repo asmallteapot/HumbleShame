@@ -40,7 +40,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Tweet" id="53">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="V4a-AI-9kQ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="V4a-AI-9kQ">
+                            <connections>
+                                <action selector="actionMenu:" destination="4" id="cyc-LM-V7v"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="profileImageView" destination="HqN-82-9h6" id="akc-Nn-UT1"/>
