@@ -122,7 +122,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="51"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" id="WNC-IK-QLk">
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" style="gray" id="WNC-IK-QLk">
                                             <rect key="frame" x="20" y="16" width="20" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </activityIndicatorView>
