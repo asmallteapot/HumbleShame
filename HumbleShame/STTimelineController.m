@@ -43,6 +43,11 @@ NSString * const kSTTimelineTweetsCache = @"STTimelineTweetsCache";
 	// Configure fetched results controller
 	self.fetchedResultsController = [Tweet fetchAllSortedBy:@"createdAt" ascending:NO withPredicate:nil groupBy:nil delegate:self];
 	
+	// Configure iPad detail controller
+	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+		self.detailViewController = (STTweetDetailController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+	}
+	
 	// Configure pull-to-refresh
 	[self.tableView addPullToRefreshWithActionHandler:^{
 		[[STTwitterClient sharedClient] downloadTweets:^(NSSet *tweets){
