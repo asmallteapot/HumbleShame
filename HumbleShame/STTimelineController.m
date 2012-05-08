@@ -175,6 +175,9 @@ NSString * const kSTTimelineTweetsCache = @"STTimelineTweetsCache";
 	Tweet *tweet = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	cell.textLabel.text = tweet.text;
 	cell.detailTextLabel.text = tweet.user.screenName;
+	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+		[cell.imageView setImageWithURL:[NSURL URLWithString:tweet.user.profileImageURL]];
+	}
 }
 
 @end
