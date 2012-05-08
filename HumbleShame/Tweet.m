@@ -11,6 +11,7 @@
 
 @implementation Tweet
 @dynamic uniqueID;
+@dynamic originalTweetID;
 @dynamic createdAt;
 @dynamic permalink;
 @dynamic text;
@@ -38,7 +39,8 @@
 	newTweet.user = originalAuthor;
 	
 	// now save data about the original tweet itself
-	newTweet.uniqueID = [retweetData objectForKey:@"id_str"];
+	newTweet.uniqueID = [attributes objectForKey:@"id_str"];
+	newTweet.originalTweetID = [retweetData objectForKey:@"id_str"];
 	newTweet.createdAt = [dateFormatter dateFromString:[retweetData objectForKey:@"created_at"]];
 	newTweet.permalink = [retweetData objectForKey:@""]; // not provided by API?
 	newTweet.text = [retweetData objectForKey:@"text"];

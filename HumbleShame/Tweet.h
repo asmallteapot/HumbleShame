@@ -12,6 +12,7 @@
 
 @interface Tweet : NSManagedObject
 @property (nonatomic, retain) NSString *uniqueID;
+@property (nonatomic, retain) NSString *originalTweetID;
 @property (nonatomic, retain) NSDate *createdAt;
 @property (nonatomic, retain) NSString *permalink;
 @property (nonatomic, retain) NSString *text;
