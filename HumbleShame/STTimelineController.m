@@ -13,14 +13,18 @@
 #import "Tweet.h"
 #import "User.h"
 
+
+NSString * const kSTTimelineTweetsCache = @"STTimelineTweetsCache";
+
+
 @interface STTimelineController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
+
 @implementation STTimelineController
 @synthesize detailViewController = _detailViewController;
-@synthesize fetchedResultsController = __fetchedResultsController;
-@synthesize managedObjectContext = __managedObjectContext;
+@synthesize fetchedResultsController = _fetchedResultsController;
 
 
 #pragma mark - View lifecycle
@@ -36,8 +40,8 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	// Keep things running until this controller is converted to MagicalRecord
-	self.managedObjectContext = [NSManagedObjectContext defaultContext];
+	// Configure fetched results controller
+	self.fetchedResultsController = [Tweet fetchAllSortedBy:@"createdAt" ascending:NO withPredicate:nil groupBy:nil delegate:self];
 	
 	// Configure pull-to-refresh
 	[self.tableView addPullToRefreshWithActionHandler:^{
@@ -46,7 +50,7 @@
 			
 			NSDate *lastUpdated = [[NSUserDefaults standardUserDefaults] objectForKey:kSTTwitterClientLastSync];
 			self.tableView.pullToRefreshView.lastUpdatedDate = lastUpdated;
-			// TODO load tweets into the table view
+			[self.tableView reloadData];
 			
 		} failure:^(NSError *error){
 			[self.tableView.pullToRefreshView stopAnimating];
@@ -111,43 +115,6 @@
 
 
 #pragma mark - Fetched results controller
-- (NSFetchedResultsController *)fetchedResultsController {
-	if (__fetchedResultsController != nil) {
-		return __fetchedResultsController;
-	}
-	
-	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-	// Edit the entity name as appropriate.
-	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Tweet" inManagedObjectContext:self.managedObjectContext];
-	[fetchRequest setEntity:entity];
-	
-	// Set the batch size to a suitable number.
-	[fetchRequest setFetchBatchSize:20];
-	
-	// Edit the sort key as appropriate.
-	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"createdAt" ascending:NO];
-	NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
-	
-	[fetchRequest setSortDescriptors:sortDescriptors];
-	
-	// Edit the section name key path and cache name if appropriate.
-	// nil for section name key path means "no sections".
-	NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
-	aFetchedResultsController.delegate = self;
-	self.fetchedResultsController = aFetchedResultsController;
-	
-	NSError *error = nil;
-	if (![self.fetchedResultsController performFetch:&error]) {
-		 // Replace this implementation with code to handle the error appropriately.
-		 // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		abort();
-	}
-	
-	return __fetchedResultsController;
-}
-
-
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
 	[self.tableView beginUpdates];
 }
@@ -170,24 +137,23 @@
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
 	   atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
 	  newIndexPath:(NSIndexPath *)newIndexPath {
-	UITableView *tableView = self.tableView;
 	
 	switch(type) {
 		case NSFetchedResultsChangeInsert:
-			[tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+			[self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
 			break;
 			
 		case NSFetchedResultsChangeDelete:
-			[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+			[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
 			break;
 			
 		case NSFetchedResultsChangeUpdate:
-			[self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+			[self configureCell:[self.tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
 			break;
 			
 		case NSFetchedResultsChangeMove:
-			[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-			[tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]withRowAnimation:UITableViewRowAnimationFade];
+			[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+			[self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]withRowAnimation:UITableViewRowAnimationFade];
 			break;
 	}
 }

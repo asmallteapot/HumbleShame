@@ -15,5 +15,4 @@
 
 @property (strong, nonatomic) STDetailViewController *detailViewController;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @end
