@@ -36,6 +36,9 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
+	// Keep things running until this controller is converted to MagicalRecord
+	self.managedObjectContext = [NSManagedObjectContext defaultContext];
+	
 	// Configure pull-to-refresh
 	[self.tableView addPullToRefreshWithActionHandler:^{
 		[[STTwitterClient sharedClient] downloadTweets:^(NSSet *tweets){
