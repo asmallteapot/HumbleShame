@@ -31,16 +31,16 @@ NSString * const kSTTwitterClientLastSync = @"STTwitterClientLastSync";
 
 #pragma mark - Object lifecycle
 - (id)initWithBaseURL:(NSURL *)url {
-    self = [super initWithBaseURL:url];
-    if (!self) {
-        return nil;
-    }
+	self = [super initWithBaseURL:url];
+	if (!self) {
+		return nil;
+	}
 
 	// Always use JSON for everything
-    [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
+	[self registerHTTPOperationClass:[AFJSONRequestOperation class]];
 	[self setDefaultHeader:@"Accept" value:@"application/json"];
 
-    return self;
+	return self;
 }
 
 
