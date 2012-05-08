@@ -68,7 +68,7 @@ NSString * const kSTTwitterClientLastSync = @"STTwitterClientLastSync";
 		// Twitter might changed the API though.
 
 		for (NSDictionary *tweetData in JSON) {
-			NSString *tweetID = [[tweetData objectForKey:@"retweeted_status"] objectForKey:@"id_str"];
+			NSString *tweetID = [tweetData objectForKey:@"id_str"];
 			if (![Tweet findFirstByAttribute:@"uniqueID" withValue:tweetID]) {
 				Tweet *tweet = [Tweet createEntityWithAttributes:tweetData];
 				[newTweets addObject:tweet];
