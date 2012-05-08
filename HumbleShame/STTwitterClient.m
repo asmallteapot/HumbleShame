@@ -61,7 +61,7 @@ NSString * const kSTTwitterClientLastSync = @"STTwitterClientLastSync";
 	[timelineParams setObject:@"10" forKey:@"count"];
 	[timelineParams setObject:@"true" forKey:@"include_entities"];
 
-	[self.class.sharedClient getPath:@"/statuses/retweeted_by_user.json" parameters:timelineParams success:^(AFHTTPRequestOperation *operation, id JSON) {
+	[self.class.sharedClient getPath:@"statuses/retweeted_by_user.json" parameters:timelineParams success:^(AFHTTPRequestOperation *operation, id JSON) {
 		NSMutableSet *newTweets = [NSMutableSet set];
 		// TODO handle errors
 		// the top-level JSON object should be a dictionary.
