@@ -1,21 +1,19 @@
 //
-//  STMasterViewController.m
+//  STTimelineController.m
 //  HumbleShame
 //
 //  Created by Bill Williams on 07.05.12.
 //  Copyright (c) 2012 Momentum Mobile. All rights reserved.
 //
 
-#import "STMasterViewController.h"
-
+#import "STTimelineController.h"
 #import "STDetailViewController.h"
 
-@interface STMasterViewController ()
+@interface STTimelineController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
-@implementation STMasterViewController
-
+@implementation STTimelineController
 @synthesize detailViewController = _detailViewController;
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;

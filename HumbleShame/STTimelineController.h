@@ -1,5 +1,5 @@
 //
-//  STMasterViewController.h
+//  STTimelineController.h
 //  HumbleShame
 //
 //  Created by Bill Williams on 07.05.12.
@@ -7,16 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <CoreData/CoreData.h>
 @class STDetailViewController;
 
-#import <CoreData/CoreData.h>
 
-@interface STMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface STTimelineController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) STDetailViewController *detailViewController;
-
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-
 @end

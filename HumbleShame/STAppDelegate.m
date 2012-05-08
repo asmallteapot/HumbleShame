@@ -8,7 +8,7 @@
 
 #import "STAppDelegate.h"
 
-#import "STMasterViewController.h"
+#import "STTimelineController.h"
 
 @implementation STAppDelegate
 
@@ -26,11 +26,11 @@
 	    splitViewController.delegate = (id)navigationController.topViewController;
 	    
 	    UINavigationController *masterNavigationController = [splitViewController.viewControllers objectAtIndex:0];
-	    STMasterViewController *controller = (STMasterViewController *)masterNavigationController.topViewController;
+	    STTimelineController *controller = (STTimelineController *)masterNavigationController.topViewController;
 	    controller.managedObjectContext = self.managedObjectContext;
 	} else {
 	    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-	    STMasterViewController *controller = (STMasterViewController *)navigationController.topViewController;
+	    STTimelineController *controller = (STTimelineController *)navigationController.topViewController;
 	    controller.managedObjectContext = self.managedObjectContext;
 	}
     return YES;

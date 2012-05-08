@@ -39,7 +39,7 @@
 		A98618D215588D85001D7354 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A98618D015588D85001D7354 /* MainStoryboard_iPhone.storyboard */; };
 		A98618D515588D85001D7354 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A98618D315588D85001D7354 /* MainStoryboard_iPad.storyboard */; };
 		A98618D815588D85001D7354 /* HumbleShame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A98618D615588D85001D7354 /* HumbleShame.xcdatamodeld */; };
-		A98618DB15588D85001D7354 /* STMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98618DA15588D85001D7354 /* STMasterViewController.m */; };
+		A98618DB15588D85001D7354 /* STTimelineController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98618DA15588D85001D7354 /* STTimelineController.m */; };
 		A98618DE15588D85001D7354 /* STDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98618DD15588D85001D7354 /* STDetailViewController.m */; };
 		A98618E915588E2C001D7354 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A98618E815588E2C001D7354 /* .gitignore */; };
 		A98618FA15588FDA001D7354 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A98618F915588FDA001D7354 /* README.md */; };
@@ -129,8 +129,8 @@
 		A98618D115588D85001D7354 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		A98618D415588D85001D7354 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		A98618D715588D85001D7354 /* HumbleShame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HumbleShame.xcdatamodel; sourceTree = "<group>"; };
-		A98618D915588D85001D7354 /* STMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STMasterViewController.h; sourceTree = "<group>"; };
-		A98618DA15588D85001D7354 /* STMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STMasterViewController.m; sourceTree = "<group>"; };
+		A98618D915588D85001D7354 /* STTimelineController.h */ = {isa = PBXFileReference; path = STTimelineController.h; sourceTree = "<group>"; };
+		A98618DA15588D85001D7354 /* STTimelineController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STTimelineController.m; sourceTree = "<group>"; };
 		A98618DC15588D85001D7354 /* STDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STDetailViewController.h; sourceTree = "<group>"; };
 		A98618DD15588D85001D7354 /* STDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STDetailViewController.m; sourceTree = "<group>"; };
 		A98618E815588E2C001D7354 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -334,8 +334,8 @@
 		A986199515589017001D7354 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A98618D915588D85001D7354 /* STMasterViewController.h */,
-				A98618DA15588D85001D7354 /* STMasterViewController.m */,
+				A98618D915588D85001D7354 /* STTimelineController.h */,
+				A98618DA15588D85001D7354 /* STTimelineController.m */,
 				A98618DC15588D85001D7354 /* STDetailViewController.h */,
 				A98618DD15588D85001D7354 /* STDetailViewController.m */,
 			);
@@ -476,7 +476,7 @@
 				A98618CB15588D85001D7354 /* main.m in Sources */,
 				A98618CF15588D85001D7354 /* STAppDelegate.m in Sources */,
 				A98618D815588D85001D7354 /* HumbleShame.xcdatamodeld in Sources */,
-				A98618DB15588D85001D7354 /* STMasterViewController.m in Sources */,
+				A98618DB15588D85001D7354 /* STTimelineController.m in Sources */,
 				A98618DE15588D85001D7354 /* STDetailViewController.m in Sources */,
 				A9469397155892E80074648E /* NSManagedObject+MagicalRecord.m in Sources */,
 				A9469398155892E80074648E /* NSManagedObjectContext+MagicalRecord.m in Sources */,
