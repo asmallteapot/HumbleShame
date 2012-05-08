@@ -94,25 +94,90 @@ NSString * const kSTTimelineTweetsCache = @"STTimelineTweetsCache";
 
 #pragma mark - Table View data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return [self.fetchedResultsController.sections count];
+	return [self.fetchedResultsController.sections count] + 1;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	if (section == [self.fetchedResultsController.sections count]) {
+		// Load More Tweets button
+		return 1;
+	}
+	
 	id<NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController.sections objectAtIndex:section];
 	return [sectionInfo numberOfObjects];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell"];
-	[self configureCell:cell atIndexPath:indexPath];
+	UITableViewCell *cell;
+	if (indexPath.section == [self.fetchedResultsController.sections count]) {
+		cell = [tableView dequeueReusableCellWithIdentifier:@"LoadMoreCell"];
+	} else {
+		cell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell"];
+		[self configureCell:cell atIndexPath:indexPath];
+	}
 	return cell;
 }
 
 
 #pragma mark - Table View delegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (indexPath.section == [self.fetchedResultsController.sections count]) {
+		// Just setting the height of the cell prototype doesn't work here
+		return 52.0;
+	}
+	
+	return [super tableView:tableView heightForRowAtIndexPath:indexPath];
+}
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	// Load More Tweets button
+	if (indexPath.section == [self.fetchedResultsController.sections count]) {
+		[tableView deselectRowAtIndexPath:indexPath animated:YES];
+		Tweet *oldestTweet = [[Tweet findAllSortedBy:@"createdAt" ascending:YES] objectAtIndex:0];
+		
+		// Find and start the activity indicator
+		// TODO proper subview recursion instead of this hackery
+		UITableViewCell *loadMoreCell = [tableView cellForRowAtIndexPath:indexPath];
+		UIActivityIndicatorView *activityView;
+		for (UIView *subview in loadMoreCell.subviews) {
+			for (id innerSubview in subview.subviews) {
+				if ([innerSubview isKindOfClass:[UIActivityIndicatorView class]]) {
+					activityView = innerSubview;
+					break;
+				}
+			}
+			if (activityView) break;
+		}
+		
+		activityView.hidden = NO;
+		[activityView startAnimating];
+		
+		[[STTwitterClient sharedClient] downloadTweets:^(NSSet *tweets){
+			// Stop animating the activity indicator
+			[activityView stopAnimating];
+			activityView.hidden = YES;
+			
+			// Set last-updated time
+			NSDate *lastUpdated = [[NSUserDefaults standardUserDefaults] objectForKey:kSTTwitterClientLastSync];
+			self.tableView.pullToRefreshView.lastUpdatedDate = lastUpdated;
+			
+			// Display the new tweets
+			[self.tableView reloadData];
+			
+		} afterTweetID:oldestTweet.uniqueID failure:^(NSError *error){
+			// Stop animating the activity indicator
+			[activityView stopAnimating];
+			activityView.hidden = YES;
+			
+			// TODO user-friendly error handling
+			NSLog(@"Error loading more tweets: %@", error);
+		}];
+		return;
+	}
+	
 	// iPad doesn’t support displaying detail items via segues
 	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
 		Tweet *tweet = [self.fetchedResultsController objectAtIndexPath:indexPath];
